@@ -14,6 +14,7 @@ namespace Todo.Domain.Handlers
         IHandler<MarkTodoAsDoneCommand>,
         IHandler<MarkTodoAsUndoneCommand>
     {
+        //estancia do repositório definida como dependencia 
         private readonly ITodoRepository _repository;
 
         public TodoHandler(ITodoRepository repository)

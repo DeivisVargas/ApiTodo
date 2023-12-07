@@ -7,6 +7,9 @@ namespace Todo.Domain.Commands
 {
     public class CreateTodoCommand : Notifiable, ICommand
     {
+        //dois construtores um com parametro e outro sem 
+        //se quiser criar uma instancia dessa classe sem passar parametro
+        //isso seria possivel
         public CreateTodoCommand() { }
 
         public CreateTodoCommand(string title, string user, DateTime date)
@@ -22,6 +25,9 @@ namespace Todo.Domain.Commands
 
         public void Validate()
         {
+            //outro exemplo da notificaçãp 
+            //AddNotification("title", "Titulo inválido"); 
+
             AddNotifications(
                 new Contract()
                     .Requires()

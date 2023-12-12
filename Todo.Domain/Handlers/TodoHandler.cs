@@ -27,7 +27,11 @@ namespace Todo.Domain.Handlers
             // Fail Fast Validation
             command.Validate();
             if (command.Invalid)
-                return new GenericCommandResult(false, "Ops, parece que sua tarefa está errada!", command.Notifications);
+                return new GenericCommandResult(
+                            false,
+                            "Ops, parece que sua tarefa está errada!",
+                            command.Notifications);
+            //command.Notifications ele vai ter todas as notificações que foram disparadas ;
 
             // Gera o TodoItem
             var todo = new TodoItem(command.Title, command.User, command.Date);
@@ -90,7 +94,7 @@ namespace Todo.Domain.Handlers
             var todo = _repository.GetById(command.Id, command.User);
 
             // Altera o estado
-            todo.MarkAsUndone();
+            //todo.MarkAsUndone();
 
             // Salva no banco
             _repository.Update(todo);

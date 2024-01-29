@@ -10,6 +10,7 @@ namespace Todo.Domain.Commands
         //dois construtores um com parametro e outro sem 
         //se quiser criar uma instancia dessa classe sem passar parametro
         //isso seria possivel
+        //teste de commit 
         public CreateTodoCommand() { }
 
         public CreateTodoCommand(string title, string user, DateTime date)
